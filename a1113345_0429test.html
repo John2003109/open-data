@@ -64,10 +64,31 @@
             padding: 20px;
         }
 
+        .card p {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 15px;
+            text-align: justify;
+        }
+
         .card iframe {
             width: 100%;
             height: 600px;
             border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-text-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .image-text-container img {
+            width: 300px;
+            height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
@@ -111,35 +132,50 @@
             <div class="card-header">65歲以上總人口數</div>
             <div class="card-content">
                 <iframe src="https://plotdb.io/v/chart/37214" allowfullscreen="true"></iframe>
+                <p>
+                    在臺北市，65歲以上人口的增加意味著醫療資源與社會福利需求的顯著提升。這需要城市在基礎設施、
+                    社會服務以及長者生活品質的改善上尋求創新的解決方案。
+                </p>
             </div>
         </div>
         <div class="card">
             <div class="card-header">65至80歲人口分布圖</div>
             <div class="card-content">
                 <iframe src="https://plotdb.io/v/chart/37472" allowfullscreen="true"></iframe>
+                <p>
+                    65-80歲是許多長者仍保持活力的重要階段，透過社區活動與健康促進計畫，可以讓這一群體在退休後仍能積極參與社會。
+                </p>
             </div>
         </div>
         <div class="card">
             <div class="card-header">80至100歲以上人口分布圖</div>
             <div class="card-content">
                 <iframe src="https://plotdb.io/v/chart/37476" allowfullscreen="true"></iframe>
+                <p>
+                    80歲以上人口的快速增長，代表著高齡化社會的挑戰與機遇。針對這些年齡層的健康管理與心理支持尤為重要。
+                </p>
             </div>
         </div>
         <section>
             <h2>家鄉高齡化的觀察與創意</h2>
-            <p>
-                當代許多長者心中仍懷抱年輕時未竟的夢想，退休後雖擁有更多時間，卻常因體力或健康因素感到力不從心，進而陷入無所事事的生活。
-                以我在台北市內湖區的觀察，許多年長者僅以散步打發時間，生活缺乏目標與活力。
-            </p>
-            <p>
-                為此，我提出「高齡爵士鼓社群」的點子，透過輕鬆有趣的爵士鼓活動，促進長者的身心健康與社會互動。
-                此社群將提供輕量化鼓具與專業指導，設計符合高齡者需求的課程，減少身體負擔，同時提升參與動機。
-                社群定期舉辦樂團演出或交流活動，不僅能滿足長者自我實現的需求，也有助於減輕孤獨與焦慮感，建立情感支持網絡。
-            </p>
-            <p>
-                讓音樂成為長者日常的一部分，重新點燃生活熱情，賦予他們更多活力、自主性與生活品質，
-                打造更健康、有連結感的高齡社會。
-            </p>
+            <div class="image-text-container">
+                <img src="https://github.com/John2003109/open-data/raw/main/d42d9312-6b17-49b2-81cf-ea3c4c29dd2c.jpg" alt="高齡爵士鼓社群">
+                <div>
+                    <p>
+                        當代許多長者心中仍懷抱年輕時未竟的夢想，退休後雖擁有更多時間，卻常因體力或健康因素感到力不從心，進而陷入無所事事的生活。
+                        以我在台北市內湖區的觀察，許多年長者僅以散步打發時間，生活缺乏目標與活力。
+                    </p>
+                    <p>
+                        為此，我提出「高齡爵士鼓社群」的點子，透過輕鬆有趣的爵士鼓活動，促進長者的身心健康與社會互動。
+                        此社群將提供輕量化鼓具與專業指導，設計符合高齡者需求的課程，減少身體負擔，同時提升參與動機。
+                        社群定期舉辦樂團演出或交流活動，不僅能滿足長者自我實現的需求，也有助於減輕孤獨與焦慮感，建立情感支持網絡。
+                    </p>
+                    <p>
+                        讓音樂成為長者日常的一部分，重新點燃生活熱情，賦予他們更多活力、自主性與生活品質，
+                        打造更健康、有連結感的高齡社會。
+                    </p>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
