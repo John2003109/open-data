@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <style>
         /* 全局樣式 */
         body {
@@ -15,12 +14,12 @@
             margin: 0;
             padding: 0;
             color: #333;
-            background: linear-gradient(to bottom, #e0eafc, #cfdef3);
+            background: linear-gradient(to bottom, #fef6e4, #f1e0c5);
             overflow-x: hidden;
         }
 
         header {
-            background: linear-gradient(to right, #4CAF50, #2a9d8f);
+            background: linear-gradient(to right, #f5a623, #f76b1c);
             color: white;
             padding: 20px 0;
             text-align: center;
@@ -30,7 +29,6 @@
         header h1 {
             font-size: 3rem;
             margin: 0;
-            animation: fadeIn 2s ease-in-out;
         }
 
         /* 主內容樣式 */
@@ -38,57 +36,46 @@
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
+        }
+
+        .card {
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            animation: slideIn 1.5s ease-out;
-        }
-
-        section {
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
             margin-bottom: 40px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        section h2 {
-            font-size: 2rem;
-            color: #2a9d8f;
-            margin-bottom: 15px;
-            border-left: 5px solid #4CAF50;
-            padding-left: 10px;
-            animation: fadeInUp 1.2s ease-in-out;
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
-        section p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            text-align: justify;
+        .card-header {
+            background: linear-gradient(to right, #f76b1c, #f5a623);
+            padding: 15px;
+            color: white;
+            font-size: 1.5rem;
+            text-align: center;
         }
 
-        .image-text-container {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
+        .card-content {
+            padding: 20px;
         }
 
-        .image-text-container img {
-            width: 300px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-
-        iframe {
+        .card iframe {
             width: 100%;
             height: 600px;
             border: none;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 1.5s ease-in-out;
         }
 
         footer {
             text-align: center;
             padding: 20px 10px;
-            background: #4CAF50;
+            background: linear-gradient(to right, #f76b1c, #f5a623);
             color: white;
             margin-top: 40px;
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
@@ -99,36 +86,19 @@
             font-size: 1rem;
         }
 
-        /* 動畫效果 */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        section {
+            margin-bottom: 40px;
         }
 
-        @keyframes slideIn {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+        section h2 {
+            font-size: 2rem;
+            color: #f76b1c;
+            margin-bottom: 15px;
         }
 
-        @keyframes fadeInUp {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+        section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
         }
     </style>
 </head>
@@ -137,46 +107,39 @@
         <h1>臺北市高齡人口資料視覺化</h1>
     </header>
     <main>
-        <section>
-            <h2>關於臺北市的高齡人口</h2>
-            <p>
-                臺北市作為臺灣的首都，隨著人口結構的轉變，65歲以上的高齡人口比例持續上升。
-                這對於城市的基礎建設、醫療資源分配以及社會福利政策提出了新的挑戰與機遇。
-                我們希望透過資料視覺化，幫助大家理解臺北市高齡化的現況與趨勢。
-            </p>
-        </section>
-        <section>
-            <h2>65歲以上總人口數</h2>
-            <iframe src="https://plotdb.io/v/chart/37214" allowfullscreen="true"></iframe>
-        </section>
-        <section>
-            <h2>65至80歲人口分布圖</h2>
-            <iframe src="https://plotdb.io/v/chart/37472" allowfullscreen="true"></iframe>
-        </section>
-        <section>
-            <h2>80至100歲以上人口分布圖</h2>
-            <iframe src="https://plotdb.io/v/chart/37476" allowfullscreen="true"></iframe>
-        </section>
+        <div class="card">
+            <div class="card-header">65歲以上總人口數</div>
+            <div class="card-content">
+                <iframe src="https://plotdb.io/v/chart/37214" allowfullscreen="true"></iframe>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">65至80歲人口分布圖</div>
+            <div class="card-content">
+                <iframe src="https://plotdb.io/v/chart/37472" allowfullscreen="true"></iframe>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">80至100歲以上人口分布圖</div>
+            <div class="card-content">
+                <iframe src="https://plotdb.io/v/chart/37476" allowfullscreen="true"></iframe>
+            </div>
+        </div>
         <section>
             <h2>家鄉高齡化的觀察與創意</h2>
-            <div class="image-text-container">
-                <img src="https://github.com/John2003109/open-data/raw/main/d42d9312-6b17-49b2-81cf-ea3c4c29dd2c.jpg" alt="高齡爵士鼓社群">
-                <div>
-                    <p>
-                        當代許多長者心中仍懷抱年輕時未竟的夢想，退休後雖擁有更多時間，卻常因體力或健康因素感到力不從心，進而陷入無所事事的生活。
-                        以我在台北市內湖區的觀察，許多年長者僅以散步打發時間，生活缺乏目標與活力。
-                    </p>
-                    <p>
-                        為此，我提出「高齡爵士鼓社群」的點子，透過輕鬆有趣的爵士鼓活動，促進長者的身心健康與社會互動。
-                        此社群將提供輕量化鼓具與專業指導，設計符合高齡者需求的課程，減少身體負擔，同時提升參與動機。
-                        社群定期舉辦樂團演出或交流活動，不僅能滿足長者自我實現的需求，也有助於減輕孤獨與焦慮感，建立情感支持網絡。
-                    </p>
-                    <p>
-                        讓音樂成為長者日常的一部分，重新點燃生活熱情，賦予他們更多活力、自主性與生活品質，
-                        打造更健康、有連結感的高齡社會。
-                    </p>
-                </div>
-            </div>
+            <p>
+                當代許多長者心中仍懷抱年輕時未竟的夢想，退休後雖擁有更多時間，卻常因體力或健康因素感到力不從心，進而陷入無所事事的生活。
+                以我在台北市內湖區的觀察，許多年長者僅以散步打發時間，生活缺乏目標與活力。
+            </p>
+            <p>
+                為此，我提出「高齡爵士鼓社群」的點子，透過輕鬆有趣的爵士鼓活動，促進長者的身心健康與社會互動。
+                此社群將提供輕量化鼓具與專業指導，設計符合高齡者需求的課程，減少身體負擔，同時提升參與動機。
+                社群定期舉辦樂團演出或交流活動，不僅能滿足長者自我實現的需求，也有助於減輕孤獨與焦慮感，建立情感支持網絡。
+            </p>
+            <p>
+                讓音樂成為長者日常的一部分，重新點燃生活熱情，賦予他們更多活力、自主性與生活品質，
+                打造更健康、有連結感的高齡社會。
+            </p>
         </section>
     </main>
     <footer>
