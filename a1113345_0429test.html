@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>臺北市高齡人口互動式資料視覺化</title>
+    <title>臺北市高齡人口資料視覺化</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,30 +24,8 @@
             max-width: 960px;
             margin: 0 auto;
         }
-        .buttons {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        .button {
-            padding: 10px 20px;
-            margin: 0 5px;
-            background-color: #ddd;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .button:hover, .button.active {
-            background-color: #4CAF50;
-            color: white;
-        }
-        .chart-container {
-            display: none;
-            text-align: center;
-        }
-        .chart-container.active {
-            display: block;
+        section {
+            margin-bottom: 40px;
         }
         iframe {
             width: 100%;
@@ -67,43 +45,24 @@
 </head>
 <body>
     <header>
-        <h1>臺北市高齡人口互動式資料視覺化</h1>
+        <h1>臺北市高齡人口資料視覺化</h1>
     </header>
     <main>
-        <div class="buttons">
-            <div class="button active" data-target="chart1">65歲以上總人口數</div>
-            <div class="button" data-target="chart2">65-80歲總人口數</div>
-            <div class="button" data-target="chart3">80-100歲總人口數</div>
-        </div>
-        <div id="chart1" class="chart-container active">
+        <section>
+            <h2>65歲以上總人口數</h2>
             <iframe src="https://plotdb.io/v/chart/37214" allowfullscreen="true"></iframe>
-        </div>
-        <div id="chart2" class="chart-container">
+        </section>
+        <section>
+            <h2>65至80歲人口分布圖</h2>
             <iframe src="https://plotdb.io/v/chart/37472" allowfullscreen="true"></iframe>
-        </div>
-        <div id="chart3" class="chart-container">
+        </section>
+        <section>
+            <h2>80至100歲以上人口分布圖</h2>
             <iframe src="https://plotdb.io/v/chart/37476" allowfullscreen="true"></iframe>
-        </div>
+        </section>
     </main>
     <footer>
         <p>&copy; 2025 臺北市高齡人口資料視覺化</p>
     </footer>
-    <script>
-        // JavaScript for Button Switching
-        const buttons = document.querySelectorAll('.button');
-        const chartContainers = document.querySelectorAll('.chart-container');
-
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons and charts
-                buttons.forEach(btn => btn.classList.remove('active'));
-                chartContainers.forEach(chart => chart.classList.remove('active'));
-
-                // Add active class to the clicked button and corresponding chart
-                button.classList.add('active');
-                document.getElementById(button.getAttribute('data-target')).classList.add('active');
-            });
-        });
-    </script>
 </body>
 </html>
