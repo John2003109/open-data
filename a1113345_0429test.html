@@ -1,113 +1,109 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>高齡化的樂章：以音樂重燃生活熱情</title>
+    <title>臺北市高齡人口互動式資料視覺化</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
-            font-family: 'Microsoft JhengHei', sans-serif;
-            background: linear-gradient(to bottom, #f7f9fc, #d9e4f5);
+            padding: 0;
+            background-color: #f9f9f9;
             color: #333;
-            line-height: 1.8;
         }
-
         header {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            background-color: #4CAF50;
             color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            font-size: 3.5rem;
-            margin: 0;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-        }
-
-        header p {
-            font-size: 1.3rem;
-            margin-top: 0.5rem;
-        }
-
-        main {
-            max-width: 960px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        main h2 {
-            font-size: 2rem;
-            color: #555;
-            margin-bottom: 1rem;
-            border-left: 5px solid #ff9a9e;
-            padding-left: 10px;
-        }
-
-        main p {
-            font-size: 1.1rem;
-            text-align: justify;
-            margin-bottom: 1.5rem;
-        }
-
-        .chart-container {
+            padding: 10px 0;
             text-align: center;
-            margin: 2rem 0;
         }
-
+        main {
+            padding: 20px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #ddd;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .tab:hover, .tab.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .chart-container {
+            display: none;
+            text-align: center;
+        }
+        .chart-container.active {
+            display: block;
+        }
         iframe {
             width: 100%;
             height: 600px;
             border: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
         footer {
             text-align: center;
-            padding: 1.5rem 1rem;
-            margin-top: 2rem;
-            background: #333;
+            padding: 10px 0;
+            background-color: #4CAF50;
             color: white;
-            font-size: 0.9rem;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>高齡化的樂章</h1>
-        <p>以音樂重燃生活熱情，打造更有活力的高齡社會</p>
+        <h1>臺北市高齡人口互動式資料視覺化</h1>
     </header>
     <main>
-        <h2>觀察與啟發</h2>
-        <p>
-            當代許多長者心中仍懷抱年輕時未竟的夢想，退休後雖擁有更多時間，卻常因體力或健康因素感到力不從心，進而陷入無所事事的生活。以我在台北市內湖區的觀察，許多年長者僅以散步打發時間，生活缺乏目標與活力。
-        </p>
-        <p>
-            為此，我提出「高齡爵士鼓社群」的點子，透過輕鬆有趣的爵士鼓活動，促進長者的身心健康與社會互動。此社群不僅僅是一個音樂活動，更是一個為高齡者量身打造的情感支持網絡。
-        </p>
-        <div class="chart-container">
-            <iframe src="https://plotdb.io/v/chart/37456" allowfullscreen="true"></iframe>
+        <div class="tabs">
+            <div class="tab active" data-target="chart1">全人口分布</div>
+            <div class="tab" data-target="chart2">65至80歲人口分布</div>
+            <div class="tab" data-target="chart3">80至100歲以上人口分布</div>
         </div>
-        <h2>高齡爵士鼓社群的設計理念</h2>
-        <p>
-            社群將提供輕量化鼓具與專業指導，設計符合高齡者需求的課程，減少身體負擔，同時提升參與動機。我們相信音樂是一種具療癒力的媒介，能讓長者從中獲得快樂與成就感。
-        </p>
-        <p>
-            更重要的是，社群定期舉辦樂團演出與交流活動，讓參與者能在舞台上發光發熱，滿足自我實現的需求，並緩解孤獨與焦慮感。這樣的設計不僅能提升長者的生活品質，也能讓家人與社會看到高齡者的活力與價值。
-        </p>
-        <h2>未來願景</h2>
-        <p>
-            我們期望透過這樣的創意設計，讓更多長者能重拾對生活的熱情與掌控感。音樂不僅僅是娛樂，更是一種生活方式的改變。未來，我們期待此模式能被複製到更多社區，進一步擴展其影響力，打造一個更健康、有連結感的高齡社會。
-        </p>
+        <div id="chart1" class="chart-container active">
+            <iframe src="https://plotdb.io/v/chart/37214" allowfullscreen="true"></iframe>
+        </div>
+        <div id="chart2" class="chart-container">
+            <iframe src="https://plotdb.io/v/chart/37472" allowfullscreen="true"></iframe>
+        </div>
+        <div id="chart3" class="chart-container">
+            <iframe src="https://plotdb.io/v/chart/37476" allowfullscreen="true"></iframe>
+        </div>
     </main>
     <footer>
-        2025 © 高齡化的樂章 | 創作者：John2003109
+        <p>&copy; 2025 臺北市高齡人口互動式資料視覺化</p>
     </footer>
+    <script>
+        // JavaScript for Tab Switching
+        const tabs = document.querySelectorAll('.tab');
+        const chartContainers = document.querySelectorAll('.chart-container');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and charts
+                tabs.forEach(t => t.classList.remove('active'));
+                chartContainers.forEach(chart => chart.classList.remove('active'));
+
+                // Add active class to the clicked tab and corresponding chart
+                tab.classList.add('active');
+                document.getElementById(tab.getAttribute('data-target')).classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
