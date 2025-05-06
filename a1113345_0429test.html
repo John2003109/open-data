@@ -24,12 +24,12 @@
             max-width: 960px;
             margin: 0 auto;
         }
-        .tabs {
+        .buttons {
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
         }
-        .tab {
+        .button {
             padding: 10px 20px;
             margin: 0 5px;
             background-color: #ddd;
@@ -38,7 +38,7 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-        .tab:hover, .tab.active {
+        .button:hover, .button.active {
             background-color: #4CAF50;
             color: white;
         }
@@ -70,10 +70,10 @@
         <h1>臺北市高齡人口互動式資料視覺化</h1>
     </header>
     <main>
-        <div class="tabs">
-            <div class="tab active" data-target="chart1">全人口分布</div>
-            <div class="tab" data-target="chart2">65至80歲人口分布</div>
-            <div class="tab" data-target="chart3">80至100歲以上人口分布</div>
+        <div class="buttons">
+            <div class="button active" data-target="chart1">65歲以上總人口數</div>
+            <div class="button" data-target="chart2">65-80歲總人口數</div>
+            <div class="button" data-target="chart3">80-100歲總人口數</div>
         </div>
         <div id="chart1" class="chart-container active">
             <iframe src="https://plotdb.io/v/chart/37214" allowfullscreen="true"></iframe>
@@ -86,22 +86,22 @@
         </div>
     </main>
     <footer>
-        <p>&copy; 2025 臺北市高齡人口互動式資料視覺化</p>
+        <p>&copy; 2025 臺北市高齡人口資料視覺化</p>
     </footer>
     <script>
-        // JavaScript for Tab Switching
-        const tabs = document.querySelectorAll('.tab');
+        // JavaScript for Button Switching
+        const buttons = document.querySelectorAll('.button');
         const chartContainers = document.querySelectorAll('.chart-container');
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                // Remove active class from all tabs and charts
-                tabs.forEach(t => t.classList.remove('active'));
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and charts
+                buttons.forEach(btn => btn.classList.remove('active'));
                 chartContainers.forEach(chart => chart.classList.remove('active'));
 
-                // Add active class to the clicked tab and corresponding chart
-                tab.classList.add('active');
-                document.getElementById(tab.getAttribute('data-target')).classList.add('active');
+                // Add active class to the clicked button and corresponding chart
+                button.classList.add('active');
+                document.getElementById(button.getAttribute('data-target')).classList.add('active');
             });
         });
     </script>
